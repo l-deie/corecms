@@ -1,0 +1,4 @@
+2014-02-24 23:06:02 | 127.0.0.1 | /corecms/index.php | MySQL Query Error<br>
+					<b>SQL</b>: SHOW TABLES FROM `corecms`<br>
+					<b>错误详情</b>: Unknown database 'corecms'<br>
+					<b>错误代码</b>:1049<br>

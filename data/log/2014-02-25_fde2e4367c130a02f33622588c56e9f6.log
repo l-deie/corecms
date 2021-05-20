@@ -1,0 +1,5 @@
+2014-02-25 00:04:27 | 127.0.0.1 | /corecms/index.php | MySQL Query Error<br>
+					<b>SQL</b>: SELECT * FROM [PRE]article  WHERE cid=<br>
+					<b>错误详情</b>: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1<br>
+					<b>错误代码</b>:1064<br>
+2014-02-25 00:21:22 | 127.0.0.1 | /corecms/index.php |./template/cms/cat.html模板文件不存在
