@@ -1,0 +1,8 @@
+array (
+  'originalName' => 'img1.jpg',
+  'name' => '13821039298021.jpg',
+  'url' => 'upload/20131018/13821039298021.jpg',
+  'size' => 202703,
+  'type' => '.jpg',
+  'state' => 'SUCCESS',
+)

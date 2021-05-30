@@ -1,0 +1,75 @@
+@charset "UTF-8";
+table.stylized { border-collapse:collapse; position:relative; margin-top:1em; margin-bottom:1em; }
+table.stylized th, table.stylized td { line-height:18px; padding:8px 12px; }
+table.stylized th { background-color:#2A7AD2 !important; color:#fff; text-align:left; }
+table.stylized tr.high { background-color:#ffa !important; }
+table.stylized tbody th, table.stylized tbody td, table.stylized tfoot th, table.stylized tfoot td { border-bottom:solid 1px #eee; }
+table.stylized tfoot td { background-color:#f2f2f2 !important; border-bottom:2px solid #ddd; }
+table.stylized tr:nth-child(even) td {}
+table.stylized tbody tr:nth-child(odd) th, table.stylized tbody tr:nth-child(odd) td { }
+table.stylized caption { margin-bottom:1em; text-align:left; font-size:11px; text-transform:uppercase; }
+table.no-style th, table.no-style td { line-height:18px; padding:4px 8px 4px 0; }
+table.no-style td, table.no-style th { background:none !important; color:#666; border-bottom:0 none; border-bottom:1px dotted #ddd !important; }
+table.no-style caption { margin-bottom:0; text-align: left; }
+/* flot TD */
+td.legendLabel { font-size:11px; padding:0 4px; vertical-align: middle; }
+table.half{ width:50%; }
+table.full{ width:97%; }
+
+.left{float:left;}
+.right{float:right;}
+.loginbox{width:330px;margin:100px auto;}
+.loginbox label{margin:10px 0;}
+.text-red{color:#FC0;}
+
+a{text-decoration: none;color:#666;}
+a:hover{color:#2A7AD2}
+label{font-size:14px;}
+header{background: none repeat scroll 0 0 #272622;border-bottom:5px solid #266DBB;}
+	header h1{margin:0;padding:10px;font-size:30px;color:#F90;width:300px;margin-bottom:-20px;}	
+nav{height:28px;}
+	nav ul{margin:0; list-style:none;float:right}
+	nav li{width:80px;float:left;margin-right:1px;text-align:center;}
+	nav a{color:#ECF3FF;line-height:28px;height:28px;padding:0 10px;display:block;background-color:#555;}
+	nav a:hover{background-color:#205FA4;color:#fff;}
+	nav a.hover{background-color:#266DBB;}
+.content{margin:10px;}	
+.page{margin:0 auto;padding:10px 0;}
+	.page a{padding:3px;margin:2px;}
+	.page span{color:#F60;}
+footer{margin:10px auto;text-align:center;border-top:1px solid #eee;padding:10px;}
+input.valid {border-color:#C4C4C4 #E9E9E9 #E9E9E9 #C4C4C4; border-style:solid; border-width:1px; padding:4px; color:#777;}
+
+
+/*forms*/
+.control-group{height:40px;width:100%;}
+.control-group .control-label{float:left;margin-left:20px;width:100px;}
+.control-group .controls{float:left;}
+label.error{font-size:12px; font-weight:normal;}
+/*tables*/
+.odd { background:#F9F9F9;}
+.hover{background:#F6F6F6;}
+table.stylized td.w50,table.stylized th.w50{width:50px;}
+table.stylized td.w100,table.stylized th.w100{width:100px;}
+
+/*评论*/
+#addcomment{width:500px;color:#DADADA;text-align:center;}
+#comment_form{display:none}
+.comment{padding:10px;border:1px dashed #EAEAEA;background:none repeat scroll 0 0 #FAFAFA;margin-top:10px;}
+/*tag样式*/
+.tag1{color:#333;font-size:14px;}
+.tag2{color:#F60;font-size:18px;}
+.tag3{color:#390;font-size:20px;}
+.tag4{color:#06C;font-size:24px;}
+.tag5{color:#900;font-size:28px;}
+.tagcontent{border:solid 1px #ddd;background:none repeat scroll 0 0 #F6F6F6;padding:10px;}
+
+
+/* width
+---------------------------------------------------------------------*/
+.div_auto{margin:auto;}
+label.wid100px{width:100px;display:block;float:left;}
+.wid150px{width:150px;}
+.wid320px{width:320px;}
+.wid50{width:50%}
+.wid70{width:70%}
