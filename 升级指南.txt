@@ -1,0 +1,11 @@
+1.1  1.2版本升级至1.3按一下配置
+
+config.php移动到config文件夹内，并在最后写return $config;将配置信息返回
+修改入口文件，
+$config = dirname(__FILE__)."/config/";
+$app=new cpApp($config);//实例化单一入口应用控制类
+初始化传进config.php文件所在路径而不是以前的配置变量
+
+以前用到的$_GET['_module']改为常量CP_MODULE $_GET['_action']改为常量CP_ACTION 
+
+然后就是覆盖框架文件

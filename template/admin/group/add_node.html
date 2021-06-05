@@ -1,0 +1,62 @@
+{include common/header}
+<div id="content">
+ 
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="widget-box">
+          <div class="widget-title"> 
+            <h5><span class="icon"> <i class="icon-align-justify"></i> </span>添加模块</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <form action="{url('group/add_node')}" method="post" class="form-horizontal">
+              
+              <div class="control-group">
+                <label class="control-label">上级模块</label>
+                <div class="controls">
+                  <select name="pid">
+                  {loop $nodes $node}
+                  <option value="{$node['id']}">{$node['show_title']}</option>                  
+                  {/loop}
+                  </select>
+                </div>
+              </div>
+              
+        <div class="control-group">
+          <label class="control-label">模块标示</label>
+          <div class="controls">
+            <input type="text" name="name" />
+          </div>
+        </div>
+       
+        <div class="control-group">
+          <label class="control-label">模块名称</label>
+          <div class="controls">
+            <input type="text" name="title" />
+          </div>
+        </div>
+       <div class="control-group">
+          <label class="control-label">排序</label>
+          <div class="controls">
+            <input type="text" name="sort" />
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">允许栏目添加</label>
+          <div class="controls">
+          <input type="checkbox" name="type" value="1" />           
+          </div>
+        </div>
+        
+              <div class="form-actions">
+                <input type="submit" class="btn btn-primary" value="确认">
+              </div>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+{include common/footer}

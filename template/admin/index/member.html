@@ -1,0 +1,30 @@
+{include common/header} 
+<style>body{background:#DDEAF9;padding:10px;}</style>
+<link rel="stylesheet" href="__SITEROOT__/static/js/dtree/dtree.css" />
+<script src="__SITEROOT__/static/js/dtree/dtree.js"></script>
+
+	<p><a href="javascript: d.openAll();">全部展开</a> | <a href="javascript: d.closeAll();">全部关闭</a> | <a href="__URL__">刷新</a></p>
+	<script type="text/javascript">
+	<!--
+		d = new dTree('d');
+		d.add(0,-1,'会员管理');
+		{loop $cattree $v}
+					d.add({$v['id']},0,'{$v['title']}','{$v['url']}','','main');
+		{/loop}
+ 					
+ 				/*d.add(22,0,'Node22','example01.html');
+		d.add(23,22,'Node22','example01.html');
+		d.add(3,1,'Node 1.1','example01.html');
+		d.add(4,0,'Node 3','example01.html');
+		d.add(5,3,'Node 1.1.1','example01.html');
+		d.add(6,5,'Node 1.1.1.1','example01.html');
+		d.add(7,0,'Node 4','example01.html');
+		d.add(8,1,'Node 1.2','example01.html');*/	
+
+		document.write(d);
+		//-->
+	</script>
+
+
+
+{include common/footer} 

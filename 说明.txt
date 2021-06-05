@@ -1,0 +1,80 @@
+更新说明
+在原2.0基础上进行了防注入优化，并简化了操作流程。只在入库操作是进行过滤处理，读取输出进行xss过滤和脚本等过滤。
+添加二级缓存和局部缓存功能
+添加模型操作
+自动填充添加string
+修改验证模型类
+添加方法后缀
+修改权限验证添加后缀
+添加模块目录方式
+module/index.class.php   优先
+module/index/index.class.php 如果上面的文件不存在，则载入此文件
+
+20130325
+统一模型初始化操作运行model()方法即可
+修改output类内的静态方法名
+
+20130325
+优化模型初始化
+修改静态方法名
+
+20130326
+数据模型添加field控制
+
+20130522
+更改模型单例初始化方式
+添加action类
+
+20130529
+修改cpConfig
+修改Action
+
+20130531
+优化模型和防止外部提交
+
+20130604
+添加分组功能，修改Action类
+
+20130605
+更新用户验证RBAC类 所需数据结构Auth_RBAC.sql
+
+20130606
+完善url函数
+
+20130607
+修改common.function.php添加随机和字符截取函数，生成验证码时用到
+修改文件上传类
+修改图片缩略图处理
+修改cpModel多表数组处理table方法
+修改数据库驱动错误提示，去除表前缀
+
+
+20130617
+install类添加创建目录方法
+
+20130618
+修改分组功能，又原先的固定分组改为config配置分组使分组更灵活
+
+20130620
+修正获取数据库表错误
+
+20130620
+RBAC添加指定模块验证功能
+修正mysqli sqlite2 sqlite3魔术引号处理
+
+20130622
+完善module方法
+修改当前模块和操作方法改为常量
+
+20130622
+完善多表删除功能
+$table = array('member'=>'member','member_field'=>'field');
+$where = 'member.uid=field.uid and member.uid='.$uid;
+$success = $db->table($table)->where($where)->delete('member,field');
+修改Action类和url函数
+
+20130628
+完善RBAC权限验证，解决大小写不同造成的权限验证问题
+
+20130628
+修改url函数默认分组时，url中忽略分组

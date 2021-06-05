@@ -1,0 +1,53 @@
+{include common/header} 
+
+<div class="content"> <a href="__APP__/cat" class="btn btn-blue">栏目列表</a>
+  <form id="catform" method="post" action="{url('cat/edit')}">
+    <p>
+      <label class="required" for="parentid">上级栏目</label>      
+      <br/>
+      <select name="parentid" id="parentid">
+        <option value="0">顶级栏目</option>
+        {loop $cattree $val}
+            <option value="{$val['id']}" {if $cat['parentid']==$val['id']}selected{/if}>{$val['ctitle']}</option>
+        {/loop}
+      </select>
+    </p>
+    
+    <p>
+      <label class="required" for="title">栏目名称</label>
+      <br/>
+      <input class="half" type="text" value="{$cat['title']}" name="title"/>
+    </p>    
+    <p>
+      <label for="keywords">关键字</label>
+      <br/>
+      <input type="text" class="full" value="{$cat['keywords']}" id="keywords" name="keywords"/>
+    </p>
+    <p>
+      <label for="description">简要</label>
+      <br/>
+      <textarea type="text" class="full" id="description" name="description"/>{$cat['description']}</textarea>
+    </p>
+    <p>
+      <label for="template">列表模板</label>
+      <br/>
+      <input class="half" type="text" value="{$cat['template']}" id="template" name="template"/>
+    </p>
+    <p>
+      <label for="vtemplate">内容模板</label>
+      <br/>
+      <input class="half" type="text" value="{$cat['vtemplate']}" id="vtemplate" name="vtemplate"/>
+    </p>    
+    <p>
+      <label for="orderfield">排序</label>
+      <br/>
+      <input class="half" type="text" value="{$cat['orderfield']}" id="orderfield" name="orderfield"/>
+    </p> 
+    <p>
+    <input type="hidden" name="id" id="id" value="{$id}"/>
+      <input type="submit" class="btn btn-green big" value="修改"/>
+      </p>
+    <div class="clear">&nbsp;</div>
+  </form>
+</div>
+{include common/footer}

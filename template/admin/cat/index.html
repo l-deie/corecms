@@ -1,0 +1,53 @@
+{include common/header}
+<div class="content">  
+  <a href="{url('cat/add')}" class="btn btn-blue">添加分类</a>
+  <script type="text/javascript">
+$(function(){
+	$("#chk_all").click(function(){
+    	 $("input[name='catid[]']").attr("checked",$(this).attr("checked"));
+		 $("#chk_all2").attr("checked",$(this).attr("checked"));
+	});
+	$("#chk_all2").click(function(){
+    	 $("input[name='catid[]']").attr("checked",$(this).attr("checked"));
+		 $("#chk_all").attr("checked",$(this).attr("checked"));
+	});
+});
+</script>
+ <form id="catform" method="post" action="{url('cat/del')}">
+  <table class="stylized full">
+    <thead>
+      <tr>
+      	<th><input type="checkbox" name="chk_all" id="chk_all" />选择</th>
+        <th>ID</th>
+        <th>名称</th>       
+        <th>模型</th> 
+        <th>排序</th>  
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+     {loop $cattree $val}
+      <tr>
+      	<td><input type="checkbox" name="catid[]" value="{$val['id']}" /></td>
+        <td>{$val['id']}</td>
+        <td>{$val['ctitle']}</td>    
+        <td>{$val['model']}</td>
+        <td>{$val['orderfield']}</td>    
+        <td><a href="{url('cat/del',array('id'=>$val['id']) )}">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{url('cat/edit',array('id'=>$val['id']) )}">修改</a></td>
+      </tr>
+     {/loop}
+    </tbody>
+    <tfoot>
+      <tr>
+      	<td><input type="checkbox" name="chk_all" id="chk_all2" />选择</td>
+        <td><input type="submit" value="删除选中" class="btn btn-red" /></td>
+        <td></td>    
+        <td></td>
+        <td></td>    
+        <td></td>
+      </tr>    
+    </tfoot>
+  </table>
+  </form>
+</div>
+{include common/footer}

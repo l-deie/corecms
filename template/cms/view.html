@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--STATUS OK-->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<title>{$article['title']}</title>
+<link href="__TEMPLATE__/css/reset.css" rel="stylesheet" type="text/css">
+<link href="__TEMPLATE__/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="wrap">
+<div class="header">
+<div class="nav">
+<ul>
+<li><a href="__ROOT__/">网站首页</a></li>
+<li><a href="{url('article/view',array('id'=>1) )}">公司简介</a></li>
+<li><a href="{url('article/view',array('id'=>4) )}">特别推荐</a></li>
+<li><a href="{url('article/view',array('id'=>6) )}">加拿大概况</a></li>
+<li><a href="{url('article/view',array('id'=>10) )}">加拿大联邦移民</a></li>
+<li><a href="{url('article/view',array('id'=>15) )}">曼尼托巴省提名</a></li>
+</ul>
+</div>
+</div>
+<div class="subnav">
+<ul>
+{loop $list $val}
+<li{if $val['id']==$_GET['id']} class="select"{/if}>
+<a href="{url('article/view',array('id'=>$val['id']) )}">{$val['title']}</a>
+</li>
+{/loop}
+</ul>
+</div>
+<div class="content">{$article['content']}</div>
+<div class="footer">加华国际咨询中心    加拿大专业移民机构</div>
+</div>
+</body>
+</html>

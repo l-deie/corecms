@@ -1,0 +1,51 @@
+body{
+	font-family: "微软雅黑", Verdana, Geneva, sans-serif;
+}
+.header{
+	background-color: #3b5998;padding:10px;
+}
+.nav{
+	background-image: url(../img/logo.png);
+	background-repeat: no-repeat;
+	height: 60px;
+	line-height:60px;
+	width: 980px;
+	margin:auto;
+}
+.nav ul{padding-left:238px;font-size:16px;}
+.nav li{float:left;margin-left:30px;}
+.nav a{
+	color: #fff;
+	text-decoration: none;
+}
+.nav a:hover{color:#FF0;}
+
+.banner{background-color: #3b5998;padding-top:10px;}
+.banner .bg{width:980px;height:527px;margin:auto;position:relative;}
+.bg .qiu{width:367px;height:367px;position:absolute;top:180px;}
+
+.phone1, .phone2{
+	background-image: url(../img/phone_bg.jpg);
+	height: 120px;
+	width: 760px;
+	margin:auto;
+	font-size:18px;
+}
+.phone1{padding:50px 0 0 220px;}
+.phone2{
+	background-position: right -180px;
+	text-align:right;
+	padding:50px 220px 0 0;
+}
+.phone1 h2{color:#4c669f;font-size:22px;margin-bottom:10px;}
+.phone2 h2{color:#1a9854;font-size:22px;margin-bottom:10px;}
+
+.footer{border-top:solid 1px #ddd;text-align:center;font-size:20px;margin:30px auto;padding-top:30px;}
+
+.subnav{background:#eee;text-align:center;padding:10px;}
+.subnav li{display:inline-block;padding:8px 16px;}
+.subnav a{color:#3b5998;}
+.subnav li.select{background:#3b5998;}
+.subnav li.select a{color:#fff;}
+.content{width:980px;margin:20px auto;}
+.content img{max-width:980px;}

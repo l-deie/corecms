@@ -1,0 +1,29 @@
+{include common/header}
+<div class="wrap"> 
+  <div class="content">  
+		<a href="{url('group/add_group')}" class="btn btn-blue">添加用户组</a>
+				<table class="stylized full">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>用户组</th>
+							<th>权限设置</th>
+							<th>编辑</th>
+							<th>删除</th>
+						</tr>
+					</thead>
+					<tbody>
+					{loop $group_list $group}
+						<tr>
+							<td>{$group['id']}</td>
+							<td>{$group['name']}</td>
+							<td><a href="{url('group/auth', array('id'=>$group['id']) )}">设置权限</a></td>
+							<td><a href="{url('group/edit_group', array('id'=>$group['id']) )}">编辑</a></td>
+							<td><a href="{url('group/del_group', array('id'=>$group['id']) )}">删除</a></td>
+						</tr>
+				    {/loop}
+					</tbody>
+				</table>							
+	</div>
+</div>
+{include common/footer}

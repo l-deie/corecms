@@ -1,0 +1,23 @@
+{include common/header}  
+<script>
+$(function(){
+	$('li a').click(function(){
+		$('li a').removeClass('hover');
+		$(this).addClass('hover');
+	});
+});
+</script>
+  <header>
+    <h1><a href="__ROOT__" target="_blank">{$_G['site']['title']}管理后台</a></h1>  
+    <nav>
+    	<ul>
+         <li><a href="{url('index/left')}" target="menu">内容管理</a></li>
+         <li><a href="{url('cat/index')}" target="main">栏目管理</a></li>
+     	 <li><a href="{url('member/index')}" target="main">用户管理</a></li>
+         <li><a href="{url('index/group')}" target="menu">权限管理</a></li>
+     	 <!--<li><a href="{url('index/system')}" target="menu">系统工具</a></li>-->   
+         <li><a href="{url('login/logout')}" target="_parent">退出</a></li>  	     
+   	 	</ul>
+ 	 </nav>  
+  </header>
+{include common/footer} 

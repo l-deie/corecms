@@ -1,0 +1,28 @@
+{include common/header}
+<div class="wrap"> 
+  <div class="content">  
+  <a href="{url('group/add_node')}" class="btn btn-blue">添加功能节点</a>
+				<table class="table table-bordered table-striped table-hover stylized">
+					<thead>
+						<tr>
+                        	<th>模块名称</th>
+							<th>模块标示</th>						
+							<th>修改</th>
+							<th>删除</th>
+						</tr>
+					</thead>
+					<tbody>
+					{loop $nodes $node}
+						<tr>
+                        	<td>{$node['show_title']}</td>
+							<td>{$node['name']}</td>							
+							<td><a href="{url('group/edit_node',array('id'=>$node['id']) )}">修改</a></td>
+							<td><a href="{url('group/del_node',array('id'=>$node['id']) )}">删除</a></td>
+						</tr>
+				    {/loop}
+					</tbody>
+				</table>							
+		
+  </div>
+</div>
+{include common/footer}

@@ -1,0 +1,39 @@
+{include common/header}
+<div id="content">
+ 
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="widget-box">
+          <div class="widget-title"> 
+            <h5><span class="icon"> <i class="icon-align-justify"></i> </span>权限设置</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <form action="{url('group/auth')}" method="post" class="form-horizontal auth">         
+       		{loop $node $group}
+       			<h1>{$group['title']}</h1>       			
+       			{loop $group['_child'] $module}
+                	<div class="module clearfix">
+       				<h2>{$module['title']}</h2>                    
+       				{loop $module['_child'] $action}
+                    <label class="checkbox">
+       				<input name="auth[]" type="checkbox" id="checkbox" value="{$action['id']}" {if ($check && in_array($action['id'],$check)) || $group_id==1}checked="checked"{/if} />{$action['title']}  </label>         
+       				{/loop}
+                    </div>
+       			{/loop}
+       		{/loop}
+        
+        
+              <div class="form-actions">
+              <input type="hidden" name="user_group_id" value="{$group_id}">
+                <input type="submit" class="btn btn-primary" value="确认">
+              </div>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+{include common/footer}

@@ -1,0 +1,117 @@
+{include common/header}
+<script type="text/javascript">
+$.validator.addMethod("vc",function(value){ 
+   if(editor.getContent().length<10){ 
+    return false; 
+   } else{
+	    return true;
+	}  
+},"内容必须大于10个字符");
+$(document).ready(function(){	
+	// validate signup form on keyup and submit
+	var validator = $("#shejiform").validate({
+		rules: {
+			thumb:{accept:"gif|png|jpg|jpeg"},
+			title: {
+ 				required: true,
+ 				minlength: 1
+			},
+			content: {
+ 				vc: true
+			},
+			keywords:{
+				maxlength:100
+			},
+			description:{
+				maxlength:200
+			}
+			
+		},
+		messages: {
+				thumb:{accept:"只能上传gif，png，jpg，jpeg格式的文件"},
+				title: { 
+					required: "请填写标题！",
+ 					minlength: $.format("至少要{0}个字符！") 								
+				},
+				content: { 
+					vc: "内容必须大于10个字符！"							
+				},
+				keywords:{
+					maxlength:$.format("最多{0}个字符！")
+				},
+				description:{
+					maxlength:$.format("最多{0}个字符！")
+				}
+			
+		},
+		// the errorPlacement has to take the layout into account
+		errorPlacement: function(error, element) {
+			error.insertAfter(element.parent().find('label:first'));			
+		},
+		// set new class to error-labels to indicate valid fields
+		success: function(label) {
+			// set &nbsp; as text for IE			
+			label.html("&nbsp;").addClass("ok");
+		}
+	});
+
+});
+
+</script>
+
+
+<div class="content"> <div class="box box-info">提示：你可以编辑内容和分类 </div><a href="{url('sheji/lists',array('cid'=>$sheji['cid']) )}" class="btn btn-blue">列 表</a>
+  <form action="{url('sheji/edit')}" method="post" enctype="multipart/form-data" id="shejiform">
+  	<p>
+      <label for="thumb">缩略图</label>      <br>
+      <input type="file" name="thumb" id="thumb" />
+    </p>
+    <p>
+      <label for="title" class="required">标题</label>      <br>
+      <input type="text" name="title" id="title" value="{$sheji['title']}" class="half">
+    </p>
+    <p>
+      <label for="author">设计师</label><br>
+      <input type="text" name="author" id="author" value="{$sheji['author']}" class="half">
+    </p>
+    <p>
+      <label for="createtime">设计时间</label><br>
+      <input type="text" name="createtime" id="createtime" value="{$sheji['createtime']}" class="half">
+    </p>
+    <p>
+      <label for="cid">分类</label>      <br>
+      <select name="cid" id="cid">        
+        {loop $cattree $val}
+            <option value="{$val['id']}" {if $sheji['cid']==$val['id']}selected{/if}>{$val['ctitle']}</option>
+        {/loop}
+      </select>
+    </p>
+    <p>
+      <label for="content" class="required">内容</label>      <br>
+      <textarea id="content" name="content" class="full large" >{$sheji['content']}</textarea>
+      <link href="__PUBLIC__/js/editor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+      <script type="text/javascript" charset="utf-8">
+        window.UEDITOR_HOME_URL = "__PUBLIC__/js/ueditor/";
+    </script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/js/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/js/ueditor/ueditor.all.js"></script>
+<script type="text/javascript">   
+    UE.getEditor('content')
+</script>
+    </p>
+    <p>
+      <label for="keywords">标签(关键字)</label><br>
+      <input type="text" name="keywords" id="keywords" class="half"  value="{$sheji['keywords']}">
+    </p>
+    <p>
+      <label for="description">摘要</label><br>
+      <textarea type="text" name="description" id="description" class="half small">{$sheji['description']}</textarea>
+    </p>
+    <p>
+      <input type="hidden" name="id" value="{$sheji['id']}">
+      <button type="submit" class="btn btn-green big">提交</button>
+    </p>
+    {$_G['formhash']}
+  </form>
+</div>
+{include common/footer}
