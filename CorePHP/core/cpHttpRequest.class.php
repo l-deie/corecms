@@ -264,7 +264,7 @@ class cpHttpRequest{
 	 * 如果是ajax请求将返回true,否则返回false
 	 * @return boolean
 	 */
-	public function getIsAjaxRequest() {
+	public function isAjax() {
 		return !strcasecmp($this->getServer('HTTP_X_REQUESTED_WITH'), 'XMLHttpRequest');
 	}
 	

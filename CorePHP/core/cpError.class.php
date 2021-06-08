@@ -5,7 +5,7 @@ class cpError extends Exception {
     private $errorFile = '';
     private $errorLine = 0;
     private $errorCode = '';
-	private $errorLevel = '';
+    private $errorLevel = '';
  	private $trace = '';
 
     public function __construct($errorMessage, $errorCode = 0, $errorFile = '', $errorLine = 0) {
