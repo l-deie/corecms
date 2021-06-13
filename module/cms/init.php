@@ -80,19 +80,7 @@ class base extends Action{
 		return is_array($data) ? array_map(array($this, 'htmlin'), $data) : CPstr::s_html($data);
 	}
 
-	/**
-	 * 判断是否为ajax传值
-	 *
-	 * @return unknown
-	 */
-	protected function isajax()
-	{
-		if (isset ( $_SERVER ['HTTP_X_REQUESTED_WITH'] ) && strtolower ( $_SERVER ['HTTP_X_REQUESTED_WITH'] ) == 'xmlhttprequest') {
-			return true;
-		} else {
-			return false;
-		}
-	}
+	
 	/**
 	
 $url，基准网址，若为空，将会自动获取，不建议设置为空 
